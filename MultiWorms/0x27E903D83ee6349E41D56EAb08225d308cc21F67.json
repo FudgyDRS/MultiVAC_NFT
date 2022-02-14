@@ -1,0 +1,271 @@
+[
+    {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+}, {
+    "anonymous": true,
+    "inputs": [
+        { "indexed": false, "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "indexed": true, "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+        { "indexed": false, "internalType": "address", "name": "from", "type": "address" }
+    ],
+    "name": "BidCancelled",
+    "type": "event"
+}, {
+    "anonymous": true,
+    "inputs": [
+        { "indexed": false, "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "indexed": true, "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+        { "indexed": false, "internalType": "address", "name": "from", "type": "address" },
+        { "indexed": true, "internalType": "uint256", "name": "price", "type": "uint256" }
+    ],
+    "name": "BidEntered",
+    "type": "event"
+}, {
+    "anonymous": true,
+    "inputs": [
+        { "indexed": false, "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "indexed": true, "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+        { "indexed": false, "internalType": "address", "name": "from", "type": "address" }
+    ],
+    "name": "Delist",
+    "type": "event"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+        { "internalType": "address", "name": "from", "type": "address" },
+        { "internalType": "address", "name": "to", "type": "address" },
+        { "internalType": "uint256", "name": "price", "type": "uint256" }
+    ],
+    "name": "List",
+    "type": "event"
+}, {
+    "anonymous": true,
+    "inputs": [
+        { "indexed": false, "internalType": "address", "name": "sender", "type": "address" },
+        { "indexed": false, "internalType": "address", "name": "receiver", "type": "address" }
+    ],
+    "name": "MarketplaceFeeReceiverUpdated",
+    "type": "event"
+}, {
+    "anonymous": true,
+    "inputs": [
+        { "indexed": false, "internalType": "address", "name": "sender", "type": "address" },
+        { "indexed": true, "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "indexed": true, "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "MarketplaceItemCreated",
+    "type": "event"
+}, {
+    "anonymous": true,
+    "inputs": [
+        { "indexed": false, "internalType": "address", "name": "previousOwner", "type": "address" },
+        { "indexed": false, "internalType": "address", "name": "newOwner", "type": "address" }],
+    "name": "OwnershipTransferred",
+    "type": "event"
+}, {
+    "anonymous": true,
+    "inputs": [{ "indexed": true, "internalType": "address", "name": "account", "type": "address" }],
+    "name": "Paused",
+    "type": "event"
+}, {
+    "anonymous": true,
+    "inputs": [
+        { "indexed": false, "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "indexed": true, "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+        { "indexed": false, "internalType": "address", "name": "from", "type": "address" },
+        { "indexed": false, "internalType": "address", "name": "to", "type": "address" },
+        { "indexed": true, "internalType": "uint256", "name": "price", "type": "uint256" }
+    ],
+    "name": "Sale",
+    "type": "event"
+}, {
+    "anonymous": true,
+    "inputs": [
+        { "indexed": false, "internalType": "address", "name": "sender", "type": "address" },
+        { "indexed": false, "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "indexed": true, "internalType": "bool", "name": "status", "type": "bool" }
+    ],
+    "name": "TradeableContractUpdated",
+    "type": "event"
+}, {
+    "anonymous": true,
+    "inputs": [{ "indexed": true, "internalType": "address", "name": "account", "type": "address" }],
+    "name": "Unpaused",
+    "type": "event"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "acceptBid",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "buyToken",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "cancelBid",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "delistToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "getListing",
+    "outputs": [{
+        "components": [
+            { "internalType": "address", "name": "contractAddress", "type": "address" },
+            { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+            { "internalType": "address", "name": "owner", "type": "address" },
+            { "internalType": "bool", "name": "forSale", "type": "bool" },
+            { "internalType": "uint256", "name": "sellPrice", "type": "uint256" },
+            { "internalType": "address", "name": "onlySellTo", "type": "address" },
+            { "internalType": "bool", "name": "activeBid", "type": "bool" },
+            { "internalType": "address", "name": "bidder", "type": "address" },
+            { "internalType": "uint256", "name": "bidPrice", "type": "uint256" }
+        ],
+        "internalType": "struct Marketplace.Listing",
+        "name": "",
+        "type": "tuple"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+}, {
+    "inputs": [],
+    "name": "getMarketplaceFeeReceiver",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+}, {
+    "inputs": [{ "internalType": "address", "name": "contractAddress", "type": "address" }],
+    "name": "getTradeableContractStatus",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+        { "internalType": "uint256", "name": "sellPrice", "type": "uint256" },
+        { "internalType": "address", "name": "onlySellTo", "type": "address" }
+    ],
+    "name": "listToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "", "type": "address" },
+        { "internalType": "address", "name": "", "type": "address" },
+        { "internalType": "uint256", "name": "", "type": "uint256" },
+        { "name": "", "type": "bytes" }
+    ],
+    "name": "onERC721Received",
+    "outputs": [{ "internalType": "bytes4", "name": "", "type": "bytes4" }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "operatorCancelBid",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "operatorDelistToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+}, {
+    "inputs": [],
+    "name": "pauseTrading",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [],
+    "name": "paused",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "placeBid",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+}, {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [{ "internalType": "address", "name": "receiver", "type": "address" }],
+    "name": "setMarketplaceFeeReceiver",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [
+        { "internalType": "address", "name": "contractAddress", "type": "address" },
+        { "internalType": "bool", "name": "status", "type": "bool" }
+    ],
+    "name": "setTradeableContractStatus",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}, {
+    "inputs": [],
+    "name": "unpauseTrading",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+}
+]
